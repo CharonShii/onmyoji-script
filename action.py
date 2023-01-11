@@ -34,5 +34,8 @@ def click_mouse(move_to_x, move_to_y, offset_point=10):
     # 延时
     t = random.randint(50, 150) / 100
     time.sleep(t)
+    px = random_point(move_to_x, offset_point)
+    py = random_point(move_to_y, offset_point)
     # 鼠标左键点击，自动偏移
-    pyautogui.leftClick(x=random_point(move_to_x, offset_point), y=random_point(move_to_y, offset_point))
+    pyautogui.leftClick(x=px, y=py)
+    print("点击", px, py)
