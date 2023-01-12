@@ -18,8 +18,8 @@ def random_point(point, offset_point=10):
 def loading(img_path, number=30):
     point = number
     while point > 0:
-        print("正在寻找" + img_path + " ", point)
         t = random.randint(50, 150) / 100
+        print("正在寻找" + img_path + " ", point, t)
         time.sleep(t)
         point = point - 1
         result = pyautogui.locateCenterOnScreen(main_path + img_path, confidence=0.95)
@@ -34,8 +34,9 @@ def click_mouse(move_to_x, move_to_y, offset_point=10):
     # 延时
     t = random.randint(50, 150) / 100
     time.sleep(t)
+    # 偏移，偏移量由offset_point决定，默认±10
     px = random_point(move_to_x, offset_point)
     py = random_point(move_to_y, offset_point)
-    # 鼠标左键点击，自动偏移
+    # 鼠标左键点击
     pyautogui.leftClick(x=px, y=py)
     print("点击", px, py)
