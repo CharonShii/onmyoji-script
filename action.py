@@ -50,3 +50,8 @@ class MoveToModel:
     x = 0
     y = 0
     offset = 0
+
+    def __init__(self, x, y, offs):
+        x = x
+        y = y
+        offset = offs
