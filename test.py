@@ -1,11 +1,8 @@
 import queue
 import time
+from threading import Thread
 
 import action as ac
-import loaction as la
-import pyautogui
-from threading import Thread
-from queue import Queue
 
 # size = pyautogui.size()
 # print(size)
@@ -35,14 +32,14 @@ def getrenwu():
     title = "任务管理器"
     while True:
         time.sleep(1)
-        matches = pyautogui.getWindowsWithTitle(title)
+        matches = ac.pag.getWindowsWithTitle(title)
         if len(matches) > 0:
             # do something with the first match
             match = matches[0]
             print(match)
-            c = pyautogui.locateCenterOnScreen(ac.main_path + "/Snipaste_2023-01-13_16-38-35.png",
-                                               region=(match.left, match.top, match.width, match.height),
-                                               confidence=0.95)
+            c = ac.pag.locateCenterOnScreen(ac.main_path + "/Snipaste_2023-01-13_16-38-35.png",
+                                            region=(match.left, match.top, match.width, match.height),
+                                            confidence=0.95)
             print(c)
             q.put([c.x, c.y])
         else:
@@ -54,14 +51,14 @@ def getexpor():
     title = "文件资源管理器"
     while True:
         time.sleep(1)
-        matches = pyautogui.getWindowsWithTitle(title)
+        matches = ac.pag.getWindowsWithTitle(title)
         if len(matches) > 0:
             # do something with the first match
             match = matches[0]
             print(match)
-            c = pyautogui.locateCenterOnScreen(ac.main_path + "/Snipaste_2023-01-13_16-41-28.png",
-                                               region=(match.left, match.top, match.width, match.height),
-                                               confidence=0.95)
+            c = ac.pag.locateCenterOnScreen(ac.main_path + "/Snipaste_2023-01-13_16-41-28.png",
+                                            region=(match.left, match.top, match.width, match.height),
+                                            confidence=0.95)
             print(c)
             q.put([c.x, c.y])
         else:
