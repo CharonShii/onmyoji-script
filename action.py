@@ -5,8 +5,9 @@ import time
 
 pyautogui.PAUSE = 0.5
 pyautogui.FAILSAFE = False
-print(pyautogui.size())
+size = pyautogui.size()
 main_path = os.getcwd() + "/png"
+print(size)
 
 
 def random_point(point, offset_point=10):
