@@ -2,6 +2,7 @@ import action as ac
 import thread_loaction as tl
 
 
+# 御魂队员
 def yuhun_duiyuan():
     while True:
         result = ac.loading("/shengli.png", 60)
@@ -10,6 +11,7 @@ def yuhun_duiyuan():
         ac.click_mouse(result.x, result.y, 60)
 
 
+# 御魂队长
 def yuhun_duizhang():
     while True:
         result = ac.loading("/tiaozhan_yuhunduizhang.png")
@@ -20,6 +22,7 @@ def yuhun_duizhang():
         ac.click_mouse(result.x, result.y, 60)
 
 
+# 困28队员
 def kun28_duiyuan():
     while True:
         result = ac.loading("/shengli.png")
@@ -36,3 +39,9 @@ def kun28_duiyuan():
         result = ac.loading("/jieshou.png", 1)
         if result is not None:
             ac.click_mouse(result.x, result.y, 60)
+
+
+# 困28队长，未完成
+def kun28_duizhang():
+    while True:
+        result = ac.loading("/shengli")
