@@ -45,3 +45,4 @@ def kun28_duiyuan():
 def kun28_duizhang():
     while True:
         result = ac.loading("/shengli")
+        ac.click_mouse(result.x, result.y)
